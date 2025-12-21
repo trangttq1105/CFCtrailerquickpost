@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Choose your topic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Choose your topic</h1>
+
+  <select id="topicSelect">
+    <option value="0">Official Trailer is finally out</option>
+    <option value="1">Excited to see FirstKhaotung again on screen</option>
+    <option value="2">The battle for FMT tickets & merchandise</option>
+    <option value="3">Curious about storyline, OST & MV</option>
+    <option value="4">Encouraging everyone to stream the trailer</option>
+    <option value="5">Praising FirstKhaotung visuals</option>
+    <option value="6">Introducing the trailer & series to others</option>
+    <option value="7">First & Khaotung chemistry</option>
+    <option value="8">Global fan support</option>
+    <option value="9">Atmosphere & impact</option>
+    <option value="10">Focus on TigerLynx</option>
+  </select>
+
+  <h2>Add your number / text / symbol (required, max 10 characters)</h2>
+  <input id="customText" maxlength="10" placeholder="e.g. 2025 ✨" />
+
+  <h2>Additional hashtags</h2>
+  <p>Please don’t add too many, recommended after the first hour</p>
+  <label><input type="checkbox" value="#FirstKhaotung"> #FirstKhaotung</label>
+  <label><input type="checkbox" value="#เฟิร์สข้าวตัง"> #เฟิร์สข้าวตัง</label>
+  <label><input type="checkbox" value="#FirstKanaphan"> #FirstKanaphan</label>
+  <label><input type="checkbox" value="#khaotungg"> #khaotungg</label>
+
+  <h2>Trailer link (optional, max 1)</h2>
+  <select id="linkSelect">
+    <option value="">None</option>
+    <option value="https://www.youtube.com/watch?v=vM6E73hy9-8">YouTube</option>
+    <option value="https://www.tiktok.com/@kanaphan.p/video/7573632678453366036">TikTok</option>
+    <option value="https://www.instagram.com/reel/DQ4OeNciXqW/">Instagram</option>
+    <option value="https://www.facebook.com/share/v/1DPy41xDXM/">Facebook</option>
+  </select>
+
+  <br /><br />
+  <button id="generateBtn">Generate 25 posts</button>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
