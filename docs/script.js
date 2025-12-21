@@ -75,3 +75,16 @@ document.getElementById("generateBtn").onclick = () => {
   });
 };
 
+// ===== Dark mode toggle =====
+const themeToggle = document.getElementById("themeToggle");
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    // đổi icon
+    themeToggle.textContent =
+      document.body.classList.contains("dark") ? "☀️" : "🌙";
+  });
+}
+
