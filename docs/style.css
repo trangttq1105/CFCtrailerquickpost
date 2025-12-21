@@ -1,1 +1,33 @@
+/* ===== Root Colors ===== */
+:root {
+  --bg: linear-gradient(135deg, #fff4ec, #fffaf3);
+  --card-bg: #ffffff;
+  --text: #333;
+  --accent: #ff8c42;
+  --accent-soft: #ffd3b6;
+  --button: linear-gradient(135deg, #ff8c42, #ffb703);
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Dark Mode ===== */
+body.dark {
+  --bg: linear-gradient(135deg, #1e1b18, #2a241f);
+  --card-bg: #2f2a26;
+  --text: #f2f2f2;
+  --accent: #ff9f5a;
+  --accent-soft: #6b4b2a;
+  --button: linear-gradient(135deg, #ff9f5a, #ffb703);
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Base ===== */
+body {
+  font-family: "Segoe UI", "Arial Rounded MT Bold", Arial, sans-serif;
+  background: var(--bg);
+  padding: 30px;
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ===== Toggle ===== *
 
