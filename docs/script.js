@@ -17,6 +17,15 @@ function getRandomItems(arr, n) {
 }
 
 document.getElementById("generateBtn").onclick = () => {
+
+  // ===== GA: Generate button =====
+  if (typeof gtag === "function") {
+    gtag("event", "generate_posts", {
+      event_category: "CFC Tool",
+      event_label: "Generate Button"
+    });
+  }
+
   const topicIndex = document.getElementById("topicSelect").value;
   const customText = document.getElementById("customText").value.trim();
   const link = document.getElementById("linkSelect").value;
@@ -41,7 +50,7 @@ document.getElementById("generateBtn").onclick = () => {
   const resultDiv = document.getElementById("result");
   resultDiv.innerHTML = "";
 
-  selected.forEach(sentence => {
+  selected.forEach((sentence, index) => {
     // Build text with line breaks
     let fullText = `${sentence} ${customText}\n\n#CatForCash`;
 
@@ -70,8 +79,18 @@ document.getElementById("generateBtn").onclick = () => {
       </a>
     `;
 
-    resultDiv.appendChild(div);
+    // ===== GA: Post to X =====
+    const postBtn = div.querySelector("a");
+    postBtn.addEventListener("click", () => {
+      if (typeof gtag === "function") {
+        gtag("event", "post_to_x", {
+          event_category: "CFC Tool",
+          event_label: `Post ${index + 1}`
+        });
+      }
+    });
 
+    resultDiv.appendChild(div);
   });
 };
 
@@ -82,9 +101,15 @@ if (themeToggle) {
   themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
-    // đổi icon
-    themeToggle.textContent =
-      document.body.classList.contains("dark") ? "☀️" : "🌙";
+    const isDark = document.body.classList.contains("dark");
+    themeToggle.textContent = isDark ? "☀️" : "🌙";
+
+    // ===== GA: Theme toggle =====
+    if (typeof gtag === "function") {
+      gtag("event", "toggle_theme", {
+        event_category: "CFC Tool",
+        event_label: isDark ? "Dark Mode" : "Light Mode"
+      });
+    }
   });
 }
-
